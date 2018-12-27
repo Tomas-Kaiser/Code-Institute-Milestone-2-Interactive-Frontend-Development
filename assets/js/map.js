@@ -1,32 +1,35 @@
 
+let querySelected = null;
 
-   let cityName = null;
-   let querySelected = null;
+getVenues();
 
-   let radio = $("input[type='radio']");
-   radio.change(function() {
-      let filteredRadio = radio.filter(":checked");
-      querySelected = filteredRadio.val();
-      console.log(querySelected)
-   });
+// Select radio option
 
-   $("#submitCity").on("click", (e) => {
-     e.preventDefault();
-     cityName = $("#inputCity").val();
+let radio = $("input[type='radio']");
 
-      $("#map").remove();
-      $("#container-map").append('<div id="map" height="100px" width="100px"></div>');
+radio.change( () => {
+   let filteredRadio = radio.filter(":checked");
+   querySelected = filteredRadio.val();
+   console.log(querySelected)
+});
 
-     getVenues();
+$("#submitCity").on("click", (e) => {
+   let cityName = "";
 
-     console.log(cityName)
-   })
+   e.preventDefault();
+   cityName = $("#inputCity").val();
 
-   getVenues();
+   $("#map").remove();
+   $("#container-map").append('<div id="map" height="100px" width="100px"></div>');
+
+   getVenues(cityName);
+
+   console.log(cityName)
+})
 
 // Foursquer API
 
-function getVenues() {
+function getVenues(cityName = null) {
 
    const endPoint = "https://api.foursquare.com/v2/venues/explore?";
    const client_id = "FHYZP5IIDLYMMWGXEGXQU0SDZANGGKMEIU1ZWFUCOINVQFWT";
@@ -35,34 +38,36 @@ function getVenues() {
    const near = cityName;
    const v = 20180323;
 
-  fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=20&near=${near}&query=${query}`)
-    .then(function(response) {
-        // Code for handling API response
-        return response.json();
-    })
-    .then(function(data) {
-      let dataAPI = [];
-      dataAPI = data.response.groups[0].items;
-      console.log(dataAPI)
-      getMap(dataAPI)
-    })
-    .catch(function(error) {
-        // Code for handling errors
-        console.log("Error!!!" + error)
-    });
+
+   fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=20&near=${near}&query=${query}`)
+      .then(function (response) {
+         // Code for handling API response
+         return response.json();
+      })
+      .then(function (data) {
+         let dataAPI = [];
+         
+         dataAPI = data.response.groups[0].items;
+         console.log(dataAPI)
+         getMap(dataAPI, cityName)
+      })
+      .catch(function (error) {
+         // Code for handling errors
+         console.log("Error!!!" + error)
+      });
 }
 
 // Rendering the map
 
-function getMap(dataAPI) {
+function getMap(dataAPI, cityName = null) {
 
-   // if value in input is empty, then set view Europe, else the selected city
+   // if input is empty, then set view Europe, else the selected city
    if (cityName === null) {
       var mymap = L.map('map').setView([50.058362, 14.454384], 5);
    } else {
-      var mymap = L.map('map').setView([dataAPI[0].venue.location.lat, dataAPI[0].venue.location.lng], 8);
+      var mymap = L.map('map').setView([dataAPI[0].venue.location.lat, dataAPI[0].venue.location.lng], 13);
    }
-   
+
 
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -71,7 +76,7 @@ function getMap(dataAPI) {
       accessToken: 'pk.eyJ1IjoidG9tYXMta2Fpc2VyIiwiYSI6ImNqaWsxcXBlZjFzYXUzcG43d3Z3dzBnengifQ.mQDUjX4MQ49QWM-Yz4u19g'
    }).addTo(mymap);
 
-   dataAPI.map( myVenue => {
+   dataAPI.map(myVenue => {
       var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng]).addTo(mymap);
       marker.bindPopup(`
          <h4>${myVenue.venue.name}</h4>
