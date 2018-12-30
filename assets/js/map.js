@@ -15,21 +15,23 @@ radio.change( () => {
 
 $("#submitCity").on("click", (e) => {
    let cityName = "";
+   let limitQuery = 20;
 
    e.preventDefault();
    cityName = $("#inputCity").val();
+   limitQuery = $("#limit").val();
 
    $("#map").remove();
    $("#container-map").append('<div id="map" height="100px" width="100px"></div>');
 
-   getVenues(cityName);
+   getVenues(cityName, limitQuery);
 
    console.log(cityName)
 })
 
 // Foursquer API
 
-function getVenues(cityName = null) {
+function getVenues(cityName = null, limitQuery = 20) {
 
    const endPoint = "https://api.foursquare.com/v2/venues/explore?";
    const client_id = "FHYZP5IIDLYMMWGXEGXQU0SDZANGGKMEIU1ZWFUCOINVQFWT";
@@ -37,9 +39,10 @@ function getVenues(cityName = null) {
    const query = querySelected;
    const near = cityName;
    const v = 20180323;
+   const limit = limitQuery;
 
 
-   fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=20&near=${near}&radius=250&query=${query}`)
+   fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=${limit}&near=${near}&radius=250&query=${query}`)
       .then(function (response) {
          // Code for handling API response
          return response.json();
