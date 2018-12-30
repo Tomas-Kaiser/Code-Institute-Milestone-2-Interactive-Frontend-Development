@@ -7,7 +7,7 @@ getVenues();
 
 let radio = $("input[type='radio']");
 
-radio.change( () => {
+radio.change(() => {
    let filteredRadio = radio.filter(":checked");
    querySelected = filteredRadio.val();
    console.log(querySelected)
@@ -49,10 +49,10 @@ function getVenues(cityName = null, limitQuery = 20) {
       })
       .then(function (data) {
          let dataAPI = [];
-         
+
          dataAPI = data.response.groups[0].items;
          console.log(dataAPI)
-         getMap(dataAPI, cityName)
+         getMap(dataAPI, cityName, querySelected)
       })
       .catch(function (error) {
          // Code for handling errors
@@ -62,7 +62,7 @@ function getVenues(cityName = null, limitQuery = 20) {
 
 // Rendering the map
 
-function getMap(dataAPI, cityName = null) {
+function getMap(dataAPI, cityName = null, querySelected) {
 
    // if input is empty, then set view Europe, else the selected city
    if (cityName === null) {
@@ -79,9 +79,10 @@ function getMap(dataAPI, cityName = null) {
       accessToken: 'pk.eyJ1IjoidG9tYXMta2Fpc2VyIiwiYSI6ImNqaWsxcXBlZjFzYXUzcG43d3Z3dzBnengifQ.mQDUjX4MQ49QWM-Yz4u19g'
    }).addTo(mymap);
 
-   dataAPI.map(myVenue => {
-      var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng]).addTo(mymap);
-      marker.bindPopup(`
+   if (querySelected != null) {
+      dataAPI.map(myVenue => {
+         var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng]).addTo(mymap);
+         marker.bindPopup(`
          <h4>${myVenue.venue.name}</h4>
          <p>Adress of venue:</p>
          <ul>
@@ -90,5 +91,6 @@ function getMap(dataAPI, cityName = null) {
             <li>${myVenue.venue.location.country}</li>
          </ul>
       `);
-   });
+      });
+   }
 }
