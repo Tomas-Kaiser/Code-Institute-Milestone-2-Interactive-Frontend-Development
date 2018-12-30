@@ -31,8 +31,16 @@
             <form action="" method="POST">
                <label for="city" class="text-center">Write a capital city wich you'd like to visit</label>
                <div class="input-group mb-3">
-                  <input id="inputCity" type="text" class="form-control" name="city" placeholder="Prague etc."
+                  <input id="inputCity" type="text" class="form-control" name="city" list="capitalCities" placeholder="Prague etc."
                      aria-label="Write a capital city, example Prague" aria-describedby="basic-addon2" required>
+                  <datalist id="capitalCities">
+                     <option value="London">London, England</option>
+                     <option value="Prague">Czech Republic</option>
+                     <option value="Lisbon">Portugal</option>
+                     <option value="Madrid">Spain</option>
+                     <option value="Paris">France</option>
+                     <option value="Berlin">Germany</option>
+                  </datalist>
                </div>
                <div class="row">
                   <div class="col-sm-4 text-center">

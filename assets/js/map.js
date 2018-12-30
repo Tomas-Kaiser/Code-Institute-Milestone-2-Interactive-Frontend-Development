@@ -39,7 +39,7 @@ function getVenues(cityName = null) {
    const v = 20180323;
 
 
-   fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=20&near=${near}&query=${query}`)
+   fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=20&near=${near}&radius=250&query=${query}`)
       .then(function (response) {
          // Code for handling API response
          return response.json();
