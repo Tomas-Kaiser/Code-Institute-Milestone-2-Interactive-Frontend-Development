@@ -1,39 +1,43 @@
-
-let querySelected = null;
-
 getVenues();
 
-// Select radio option
+ // Select radio option
 
-let radio = $("input[type='radio']");
+ let radio = $("input[type='radio']");
+ let querySelected = null;
 
-radio.change(() => {
-   let filteredRadio = radio.filter(":checked");
-   querySelected = filteredRadio.val();
-   console.log(querySelected)
-});
+ radio.change(() => {
+    let filteredRadio = radio.filter(":checked");
+    querySelected = filteredRadio.val();
+    console.log(querySelected)
+ });
+
 
 $("#submitCity").on("click", (e) => {
    let cityName = "";
    let limitQuery = 20;
    let radiusSelected = 550;
-
-   e.preventDefault();
+   
+   // Selected by ID name of city, how many venues you want to recommend, radius from the center
    cityName = $("#inputCity").val();
    limitQuery = $("#limit").val();
    radiusSelected = $("#radius").val();
 
-   $("#map").remove();
-   $("#container-map").append('<div id="map" height="100px" width="100px"></div>');
+   if(cityName != "") {
+      e.preventDefault();
+   }
 
-   getVenues(cityName, limitQuery, radiusSelected);
+   // Reloading the map with new data
+   $("#map").remove();
+   $("#container-map").append('<div id="map"></div>');
+
+   getVenues(cityName, limitQuery, radiusSelected, querySelected);
 
    console.log(cityName)
 })
 
 // Foursquer API
 
-function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550) {
+function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, querySelected = null) {
 
    const endPoint = "https://api.foursquare.com/v2/venues/explore?";
    const client_id = "FHYZP5IIDLYMMWGXEGXQU0SDZANGGKMEIU1ZWFUCOINVQFWT";
@@ -67,13 +71,12 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550) {
 
 function getMap(dataAPI, cityName = null, querySelected) {
 
-   // if input is empty, then set view Europe, else the selected city
+   // if input of city is empty, then set view Europe, else the selected city
    if (cityName === null) {
       var mymap = L.map('map').setView([50.058362, 14.454384], 5);
    } else {
       var mymap = L.map('map').setView([dataAPI[0].venue.location.lat, dataAPI[0].venue.location.lng], 13);
    }
-
 
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
       attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
