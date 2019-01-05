@@ -1,36 +1,36 @@
 getVenues();
 
- // Select radio option
+// Select radio option
 
- let radio = $("input[type='radio']");
- let querySelected = null;
+let radio = $("input[type='radio']");
+let querySelected = null;
 
- radio.change(() => {
-    let filteredRadio = radio.filter(":checked");
-    querySelected = filteredRadio.val();
-    console.log(querySelected)
- });
+radio.change(() => {
+   let filteredRadio = radio.filter(":checked");
+   querySelected = filteredRadio.val();
+   console.log(querySelected)
+});
 
 
 $("#submitCity").on("click", (e) => {
    let cityName = "";
    let limitQuery = 20;
    let radiusSelected = 550;
-   
+
    // Selected by ID name of city, how many venues you want to recommend, radius from the center
    cityName = $("#inputCity").val();
    limitQuery = $("#limit").val();
    radiusSelected = $("#radius").val();
 
-   if(cityName != "") {
+   if (cityName != "") {
       e.preventDefault();
+
+      // Reloading the map with new data
+      $("#map").remove();
+      $("#container-map").append('<div id="map"></div>');
+
+      getVenues(cityName, limitQuery, radiusSelected, querySelected);
    }
-
-   // Reloading the map with new data
-   $("#map").remove();
-   $("#container-map").append('<div id="map"></div>');
-
-   getVenues(cityName, limitQuery, radiusSelected, querySelected);
 
    console.log(cityName)
 })
