@@ -12,8 +12,12 @@
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
       crossorigin="anonymous">
 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Lobster|Roboto:400,700" rel="stylesheet">
+
    <!-- CSS -->
    <link rel="stylesheet" href="assets/css/map.css">
+   <link rel="stylesheet" href="assets/css/main.css">
 
    <!-- Map Leaflet -->
    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -29,7 +33,7 @@
       <div class="row">
          <div class="col-sm-12">
             <form action="" method="POST">
-               <label for="city" class="text-center">Write a capital city wich you'd like to visit</label>
+               <label for="city" class="text-center">Looking for a hotel, restaurant or sights in the one of the capital city in Europe?</label>
                <div class="input-group mb-3">
                   <input id="inputCity" type="text" class="form-control" name="city" list="capitalCities" placeholder="Prague etc."
                      aria-label="Write a capital city, example Prague" aria-describedby="basic-addon2" required>
@@ -112,8 +116,8 @@
                            value="20">
                      </div>
                      <div class="col-sm-6 text-center">
-                        Radius (between 550 to 5050): <input id="radius" type="number" name="quantity" min="550" max="5050" step="100"
-                           value="550">
+                        Radius (between 550 to 5050): <input id="radius" type="number" name="quantity" min="550" max="5050"
+                           step="100" value="550">
                      </div>
                   </div>
                </div>
