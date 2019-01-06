@@ -48,6 +48,21 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, query
    const limit = limitQuery;
    const radius = radiusSelected;
 
+   // Getting data from foursquear via AJAX vith jQuery
+
+   $.ajax({
+      type: "GET",
+      url: `${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=${limit}&near=${near}&radius=${radius}&query=${query}`,
+      success: function(data) {
+         let dataAPI = [];
+
+         dataAPI = data.response.groups[0].items;
+         console.log(dataAPI)
+         getMap(dataAPI, cityName, querySelected)
+      }
+   });
+
+/* Getting data from foursquear by Fetch
 
    fetch(`${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=${limit}&near=${near}&radius=${radius}&query=${query}`)
       .then(function (response) {
@@ -65,6 +80,7 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, query
          // Code for handling errors
          console.log("Error!!!" + error)
       });
+*/
 }
 
 // Rendering the map
