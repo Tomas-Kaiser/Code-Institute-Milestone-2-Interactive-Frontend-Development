@@ -3,6 +3,9 @@
 let capitalCities = [
    ["Prague", "The Czech Republic"],
    ["London", "England"],
+   ["Edinburgh", "Scottland"],
+   ["Cardiff", "Wales"],
+   ["Belfast", "North Ireland"],
    ["Paris", "France"],
    ["Dublin, IE", "Ireland"],
    ["Madrid", "Spain"],
