@@ -55,7 +55,7 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, query
       url: `${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=${limit}&near=${near}&radius=${radius}&query=${query}`,
       success: function(data) {
          let dataAPI = [];
-
+         console.log(data)
          dataAPI = data.response.groups[0].items;
          console.log(dataAPI)
          getMap(dataAPI, cityName, querySelected)

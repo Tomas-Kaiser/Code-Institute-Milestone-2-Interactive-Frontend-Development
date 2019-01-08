@@ -4,6 +4,15 @@ body {
   font-size: 1.05em;
 }
 
+/*
+*
+*** Callout Section
+*
+*/
+.callout-section {
+  height: 100vh;
+}
+
 h1 {
   font-family: "Lobster", sans-serif;
   font-size: 2.8em;
