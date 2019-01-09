@@ -1,0 +1,15 @@
+.scrollDown {
+   position: absolute;
+   top: 74%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+}
+
+.scrollDown span {
+   display: block;
+   width: 20px;
+   height: 20px;
+   border-bottom: 1px solid black;
+   border-right: 1px solid black;
+   transform: rotate(45deg);
+}
