@@ -5,6 +5,13 @@ body {
       family: "Roboto", sans-serif;
       size: 1.05em;
    }
+
+   h1 {
+      font: {
+         family: "Lobster", sans-serif;
+         size: 2.8em;
+      }
+   }
 }
 
 /*
@@ -13,65 +20,65 @@ body {
 *
 */
 
-.callout-section {
+.callout-container {
  height: 100vh;
-}
 
-h1 {
-   font: {
-      family: "Lobster", sans-serif;
-      size: 2.8em;
-   }
-}
+ background: url("../img/Prague-bridge-czech-republic-Intrepid-Travel.jpg") no-repeat center center fixed; 
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
 
-.btn-advanced {
-   padding: 2px 10px;
-}
-
-.btn-margin--10px {
-   margin: 10px 0px;
-}
-
-// ScrollDown 
-
-.scrollDown {
-   position: absolute;
-   top: 74%;
-   left: 50%;
-   transform: translate(-50%, -50%);
-   
-   span {
-      display: block;
-      width: 20px;
-      height: 20px;
-      margin: -10px;
-      border-bottom: 1px solid black;
-      border-right: 1px solid black;
-      transform: rotate(45deg);
-      animation: animate 2s infinite;
+   .jumbotron {
+      opacity: .9;
+      padding: 12px;
+      width: 50%;
+      position: relative;
+      left: 25%;
+      top: 34%;
    }
 
-   span:nth-child(1) {
-      animation-delay: -0.2s;
-   }
-   span:nth-child(2) {
-      animation-delay: -0.4s;
-   }
-}
+ // ScrollDown 
 
-@keyframes animate {
-   0% {
-      opacity: 0;
-      transform: rotate(45deg) translate(-20px, -20px)
+   .scrollDown {
+      position: absolute;
+      top: 74%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      
+      span {
+         display: block;
+         width: 20px;
+         height: 20px;
+         margin: -10px;
+         border-bottom: 3px solid rgb(221, 217, 217);
+         border-right: 3px solid rgb(221, 217, 217);
+         transform: rotate(45deg);
+         animation: animate 2s infinite;
+      }
+
+      span:nth-child(1) {
+         animation-delay: -0.2s;
+      }
+      span:nth-child(2) {
+         animation-delay: -0.4s;
+      }
    }
 
-   50% {
-      opacity: 1;
-   }
+   @keyframes animate {
+      0% {
+         opacity: 0;
+         transform: rotate(45deg) translate(-20px, -20px)
+      }
 
-   100% {
-      opacity: 0;
-      transform: rotate(45deg) translate(20px, 20px)
+      50% {
+         opacity: 1;
+      }
+
+      100% {
+         opacity: 0;
+         transform: rotate(45deg) translate(20px, 20px)
+      }
    }
 }
 
@@ -81,9 +88,19 @@ h1 {
 *
 */
 
-#map {
-   min-height: 65vh;
- }
+.map-container {
+   #map {
+      min-height: 65vh;
+    }
+   
+    .btn-advanced {
+      padding: 2px 10px;
+   }
+   
+   .btn-margin--10px {
+      margin: 10px 0px;
+   }
+}
 
 /*
 *
@@ -91,28 +108,30 @@ h1 {
 *
 */
 
-.social-links {
-   padding: 0;
-
-   li {
-      list-style: none;
-
-      a i {
-         width: 32px;
-         height: 32px;
-         padding: 12px 0;
-         font-size: 13px;
-         line-height: 7px;
-         text-align: center;
-         color: #fafafa;
-         background: #8f8f8f;
-         -moz-transition: all 0.35s ease-in-out;
-         -webkit-transition: all 0.35s ease-in-out;
-         -o-transition: all 0.35s ease-in-out;
+.footer-container {
+   .social-links {
+      padding: 0;
+   
+      li {
+         list-style: none;
+   
+         a i {
+            width: 32px;
+            height: 32px;
+            padding: 12px 0;
+            font-size: 13px;
+            line-height: 7px;
+            text-align: center;
+            color: #fafafa;
+            background: #8f8f8f;
+            -moz-transition: all 0.35s ease-in-out;
+            -webkit-transition: all 0.35s ease-in-out;
+            -o-transition: all 0.35s ease-in-out;
+         }
+         
+         a i:hover {
+            background-color: #b90738;
+         }
       }
-      
-      a i:hover {
-         background-color: #b90738;
-      }
-   }
- }
+    }
+}
