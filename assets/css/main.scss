@@ -32,6 +32,59 @@ h1 {
    margin: 10px 0px;
 }
 
+// ScrollDown 
+
+.scrollDown {
+   position: absolute;
+   top: 74%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   
+   span {
+      display: block;
+      width: 20px;
+      height: 20px;
+      margin: -10px;
+      border-bottom: 1px solid black;
+      border-right: 1px solid black;
+      transform: rotate(45deg);
+      animation: animate 2s infinite;
+   }
+
+   span:nth-child(1) {
+      animation-delay: -0.2s;
+   }
+   span:nth-child(2) {
+      animation-delay: -0.4s;
+   }
+}
+
+@keyframes animate {
+   0% {
+      opacity: 0;
+      transform: rotate(45deg) translate(-20px, -20px)
+   }
+
+   50% {
+      opacity: 1;
+   }
+
+   100% {
+      opacity: 0;
+      transform: rotate(45deg) translate(20px, 20px)
+   }
+}
+
+/*
+*
+*** MAP section
+*
+*/
+
+#map {
+   min-height: 65vh;
+ }
+
 /*
 *
 *** FOOTER
