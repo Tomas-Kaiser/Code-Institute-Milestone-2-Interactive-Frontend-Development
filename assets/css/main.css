@@ -20,18 +20,23 @@ body h1 {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.callout-container .relative-position--top {
+  position: relative;
+  top: -6%;
 }
 .callout-container .jumbotron {
-  opacity: 0.9;
   padding: 12px;
-  width: 50%;
-  position: relative;
-  left: 25%;
-  top: 34%;
+  margin-top: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
 }
 .callout-container .scrollDown {
   position: absolute;
-  top: 74%;
+  top: 150%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
@@ -40,8 +45,8 @@ body h1 {
   width: 20px;
   height: 20px;
   margin: -10px;
-  border-bottom: 3px solid #ddd9d9;
-  border-right: 3px solid #ddd9d9;
+  border-bottom: 5px solid #e5f3bd;
+  border-right: 5px solid #e5f3bd;
   transform: rotate(45deg);
   animation: animate 2s infinite;
 }
@@ -70,6 +75,9 @@ body h1 {
 *** MAP section
 *
 */
+.map-container {
+  margin-top: 10px;
+}
 .map-container #map {
   min-height: 65vh;
 }
