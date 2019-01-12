@@ -52,6 +52,7 @@ body {
       top: 150%;
       left: 50%;
       transform: translate(-50%, -50%);
+      padding: 50px;
       
       span {
          display: block;
@@ -96,10 +97,11 @@ body {
 */
 
 .map-container {
-   margin-top: 10px;
+   margin: 10px 0;
+   height: calc(100vh - 20px);
 
    #map {
-      min-height: 65vh;
+      min-height: calc(100vh - 20px);
     }
    
     .btn-advanced {
@@ -118,8 +120,15 @@ body {
 */
 
 .footer-container {
+   background-color: #7a7a7a;
+
+   .text--white {
+      color: white;
+   }
+
    .social-links {
       padding: 0;
+      margin-bottom: 4px;
    
       li {
          list-style: none;
