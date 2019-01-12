@@ -80,6 +80,17 @@ body h1 {
   margin: 10px 0;
   height: calc(100vh - 20px);
 }
+.map-container .search-city {
+  width: 100%;
+  padding: 20px 20px 20px 60px;
+  background-image: url(../img/search_icon.svg);
+  background-repeat: no-repeat;
+  background-position: 20px center;
+  background-size: 1em;
+  font-size: 1.2em;
+  border: 0;
+  outline: none;
+}
 .map-container #map {
   min-height: calc(100vh - 20px);
 }
