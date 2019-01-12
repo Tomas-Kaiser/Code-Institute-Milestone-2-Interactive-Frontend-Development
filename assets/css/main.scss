@@ -1,3 +1,7 @@
+// Variables
+$break-small-phones: 400px;
+$break-medium: 768px;
+
 body {
    background-color: rgb(243, 243, 243);
 
@@ -35,7 +39,7 @@ body {
 
    .relative-position--top {
       position: relative;
-      top: -6%;
+      top: -8%;
    }
 
    .jumbotron {
@@ -49,7 +53,10 @@ body {
 
    .scrollDown {
       position: absolute;
-      top: 150%;
+      top: 120%;
+      @media screen and (min-width: $break-small-phones) {
+         top: 150%;
+      }
       left: 50%;
       transform: translate(-50%, -50%);
       padding: 50px;
@@ -98,7 +105,6 @@ body {
 
 .map-container {
    margin: 10px 0;
-   height: calc(100vh - 20px);
 
    .search-city {
       width: 100%;
@@ -113,7 +119,10 @@ body {
    }
 
    #map {
-      min-height: calc(100vh - 20px);
+      min-height: 100vh;
+      @media screen and (min-width: $break-medium) {
+         min-height: calc(100vh - 20px);
+      }
     }
    
     .btn-advanced {
