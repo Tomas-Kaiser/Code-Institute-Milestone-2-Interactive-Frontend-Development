@@ -102,8 +102,20 @@ function getMap(dataAPI, cityName = null, querySelected) {
    }).addTo(mymap);
 
    if (querySelected != null) {
+
+   // Marker color
+      var violetIcon = new L.Icon({
+         iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+         shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+         iconSize: [25, 41],
+         iconAnchor: [12, 41],
+         popupAnchor: [1, -34],
+         shadowSize: [41, 41]
+       });
+       
+       
       dataAPI.map(myVenue => {
-         var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng]).addTo(mymap);
+         var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng], {icon: violetIcon}).addTo(mymap);
          marker.bindPopup(`
          <h4>${myVenue.venue.name}</h4>
          <p class="marker-p">Adress of venue:</p>
