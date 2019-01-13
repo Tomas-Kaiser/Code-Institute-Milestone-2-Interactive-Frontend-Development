@@ -116,6 +116,9 @@ body h1 {
 .map-container .btn-advanced {
   padding: 2px 10px;
 }
+.map-container .btn-advanced:hover {
+  box-shadow: 0 8px 6px -6px black;
+}
 .map-container .input-limit {
   text-align: center;
 }
