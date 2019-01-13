@@ -61,7 +61,7 @@
       <div class="row">
          <div class="col-sm-12 col-md-4">
             <form action="" method="POST">
-               <label for="city" class="text-center">Please, write the capital city you wish to visit</label>
+               <label for="city" class="text-center">Please write the capital city you wish to visit</label>
                <div class="input-group mb-3">
                   <input id="inputCity" type="text" class="form-control search-city" name="city" list="capitalCities" placeholder="Prague etc."
                      aria-label="Write a capital city, example Prague" aria-describedby="basic-addon2" required>
@@ -98,19 +98,19 @@
                <div class="collapse" id="collapseExample">
                   <div class="row">
                      <div class="col-sm-6 text-center">
-                        Quantity (between 1 and 50): <input id="limit" type="number" name="quantity" min="1" max="50"
+                        Number of suggested results (1 to 50): <input id="limit" type="number" name="quantity" min="1" max="50"
                            value="20">
                      </div>
                      <div class="col-sm-6 text-center">
-                        Radius (between 550 to 5050): <input id="radius" type="number" name="quantity" min="550" max="5050"
-                           step="100" value="550">
+                        Radius (500m to 5000m): <input id="radius" type="number" name="quantity" min="500" max="5000"
+                           step="100" value="500">
                      </div>
                   </div>
                </div>
                <!-- /Advanced Button -->
 
                <div class="text-center">
-                  <a href="#map"><button id="submitCity" type="submit" class="btn btn-primary btn-margin--10px">submit</button></a>
+                  <a href="#map"><button id="submitCity" type="submit" class="btn btn-advanced-style btn-margin--10px">submit</button></a>
                </div>
             </form>
          </div>
