@@ -106,8 +106,8 @@ function getMap(dataAPI, cityName = null, querySelected) {
          var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng]).addTo(mymap);
          marker.bindPopup(`
          <h4>${myVenue.venue.name}</h4>
-         <p>Adress of venue:</p>
-         <ul>
+         <p class="marker-p">Adress of venue:</p>
+         <ul class="marker-ul">
             <li>${myVenue.venue.location.address}</li>
             <li>${myVenue.venue.location.city}</li>
             <li>${myVenue.venue.location.country}</li>
