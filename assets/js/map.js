@@ -48,7 +48,7 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, query
    const limit = limitQuery;
    const radius = radiusSelected;
 
-   // Getting data from foursquear via AJAX vith jQuery
+   // Getting data from foursquear via AJAX vith jQuery for better compatibility with browsers
 
    $.ajax({
       type: "GET",
