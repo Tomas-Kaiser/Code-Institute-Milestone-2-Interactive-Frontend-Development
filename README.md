@@ -85,7 +85,7 @@ the highest score is 100
 
 ## Deployment
 The website was deployed on github.
-Live version of the website can be found [here]()
+Live version of the website can be found [here](https://tomas-kaiser.github.io/Code-Institute-Milestone-2-Interactive-Frontend-Development/)
 
 ## Credits
 * Background image was collected from [google images](www.google.com)
