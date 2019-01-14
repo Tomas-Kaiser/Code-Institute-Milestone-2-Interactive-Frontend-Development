@@ -9,12 +9,12 @@ body {
       family: "Roboto", sans-serif;
       size: 1.05em;
    }
+}
 
-   h1 {
-      font: {
-         family: "Lobster", sans-serif;
-         size: 2.8em;
-      }
+h1 {
+   font: {
+      family: "Lobster", sans-serif;
+      size: 2.8em;
    }
 }
 
@@ -115,7 +115,6 @@ body {
       background-size: 1.0em;
       font-size: 1.2em;
       border: 0;
-      outline: none;
    }
 
    #map {

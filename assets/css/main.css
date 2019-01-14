@@ -3,7 +3,8 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.05em;
 }
-body h1 {
+
+h1 {
   font-family: "Lobster", sans-serif;
   font-size: 2.8em;
 }
@@ -93,7 +94,6 @@ body h1 {
   background-size: 1em;
   font-size: 1.2em;
   border: 0;
-  outline: none;
 }
 .map-container #map {
   min-height: 100vh;

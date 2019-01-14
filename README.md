@@ -15,8 +15,8 @@ This is aiming at people who are heading to one of the capital cities in Europe 
 ### Wireframes:  
 The following wireframes were created in order to provide a starting point for the website skeleton:
 
-* [mobile device]()
-* [desktop device]()
+* [mobile device](wireframes/desktop.png)
+* [desktop device](wireframes/mobile.png)
 
 # Features
 The features were used as follow:
@@ -34,6 +34,8 @@ I used following technologies for this particular project:
   * [BEM](http://getbem.com/) - used for cleaner style sheet
   * Javascript ([jQuery](https://jquery.com/))
   * [leaflet](https://leafletjs.com/) JS library
+* [Foursquer API](https://developer.foursquare.com/)
+* [Adobe Xd](https://www.adobe.com/cz/products/xd.html)
 * [VS Studio Code](https://visualstudio.microsoft.com/cs/?rr=https%3A%2F%2Fwww.google.ie%2F)
 * [GIMP](https://www.gimp.org/)
 
@@ -61,13 +63,33 @@ The manual testing was accomplished mainly by using following technologies/tools
 #### Manual Testing Bugs
 
 ## Automated Testing
+The automate testing was executed by the following tools:
+
+* Chrome Lighthouse
+
+The Lighthouse is an open-source automated tool that audits website for performance, progresssive Web app, accessibility, best practices & SEO. The website current score as follows:
+
+```
+> Performance at 82
+> Progresssive Web app at 58
+> Accessibility at 83
+> Best practices at 87
+> SEO at 100
+
+the highest score is 100
+```
+
+* HTML & CSS validator
+  * [HTML validator result](https://validator.w3.org) found one error from line 11 as the pipe key is illegal character in query.
+  * [CSS validator result](https://codebeautify.org/cssvalidate) did not find any major error.
 
 ## Deployment
 The website was deployed on github.
 Live version of the website can be found [here]()
 
 ## Credits
-* background image was collected from [google images](www.google.com)
+* Background image was collected from [google images](www.google.com)
+* Smooth scrolldown JS [w3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1)
 
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.

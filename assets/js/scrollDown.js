@@ -24,7 +24,3 @@ $(document).ready(function(){
      } // End if
    });
  });
-
- // Passive event listeners
-
- document.addEventListener('touchstart', onTouchStart, {passive: true});
