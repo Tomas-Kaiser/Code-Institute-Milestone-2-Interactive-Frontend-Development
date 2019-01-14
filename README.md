@@ -15,22 +15,22 @@ This is aiming at people who are heading to one of the capital cities in Europe 
 ### Wireframes:  
 The following wireframes were created in order to provide a starting point for the website skeleton:
 
-* [mobile device](wireframes/desktop.png)
-* [desktop device](wireframes/mobile.png)
+* [mobile device](wireframes/desktop.PNG)
+* [desktop device](wireframes/mobile.PNG)
 
 # Features
 The features were used as follow:
-* Scrolldown arrows in callout
-* Advanced button for choosing limit for recommended venue as well as radius
-* Button submit which executes recommended venues on the map
+* Scrolldown arrows in callout container
+* Advanced button for choosing limit for recommended venues as well as radius
+* Button "submit" which executes recommended venues on the map
 
 ## Technologies Used
 I used following technologies for this particular project:
 * HTML5
 * CSS3
   * [Bootstrap 4](https://getbootstrap.com/)
-  * [Font awesome](https://fontawesome.com/) - used for arrow back-to-up button & social icons
-  * [Google fonts](https://fonts.google.com/) - Roboto & Pattaya
+  * [Font awesome](https://fontawesome.com/) - icons
+  * [Google fonts](https://fonts.google.com/) - Roboto & Lobster
   * [BEM](http://getbem.com/) - used for cleaner style sheet
   * Javascript ([jQuery](https://jquery.com/))
   * [leaflet](https://leafletjs.com/) JS library
@@ -80,7 +80,7 @@ the highest score is 100
 ```
 
 * HTML & CSS validator
-  * [HTML validator result](https://validator.w3.org) found one error from line 11 as the pipe key is illegal character in query.
+  * [HTML validator result](https://validator.w3.org) found one error from line 20 as the pipe key is illegal character in query.
   * [CSS validator result](https://codebeautify.org/cssvalidate) did not find any major error.
 
 ## Deployment
@@ -89,7 +89,7 @@ Live version of the website can be found [here]()
 
 ## Credits
 * Background image was collected from [google images](www.google.com)
-* Smooth scrolldown JS [w3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1)
+* Smooth scrolldown effect JS [w3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1)
 
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
