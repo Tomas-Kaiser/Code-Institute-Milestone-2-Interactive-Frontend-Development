@@ -11,7 +11,6 @@ radio.change(() => {
    console.log(querySelected)
 });
 
-
 $("#submitCity").on("click", (e) => {
    let cityName = "";
    let limitQuery = 20;
@@ -91,7 +90,7 @@ function getMap(dataAPI, cityName = null, querySelected) {
    if (cityName === null) {
       var mymap = L.map('map').setView([50.058362, 14.454384], 5);
    } else {
-      var mymap = L.map('map').setView([dataAPI[0].venue.location.lat, dataAPI[0].venue.location.lng], 13);
+      var mymap = L.map('map').setView([dataAPI[0].venue.location.lat, dataAPI[0].venue.location.lng], 15);
    }
 
    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
