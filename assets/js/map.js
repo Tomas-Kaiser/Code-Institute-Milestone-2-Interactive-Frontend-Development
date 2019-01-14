@@ -112,7 +112,7 @@ function getMap(dataAPI, cityName = null, querySelected) {
          shadowSize: [41, 41]
        });
        
-       
+   // Getting marker and pop up markers    
       dataAPI.map(myVenue => {
          var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng], {icon: greenIcon}).addTo(mymap);
          marker.bindPopup(`
