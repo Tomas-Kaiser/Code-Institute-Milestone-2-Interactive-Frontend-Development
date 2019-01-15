@@ -1,5 +1,5 @@
 # Project 2 - Visiting Capital Cities in Europe
-This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was focused on using semantic HTML5, SASS along with Bootstrap 4, JavaScript (jQuery) as well ass working with Foursquer API with using map (leaflet library).
+This project is built for [Code Institute](https://codeinstitute.net/) as a part of _Full Stack Software Development Diploma course_. Project was focused on using semantic HTML5, SASS along with Bootstrap 4, JavaScript (jQuery) as well as working with Foursquer API with using map (leaflet library).
 
 ## UX
 This is aiming at people who are heading to one of the capital cities in Europe and looking for accommodation, restaurants or nice sights. This website helps them with planning their journey.
@@ -61,6 +61,16 @@ The manual testing was accomplished mainly by using following technologies/tools
   * Mobile Phone
 
 #### Manual Testing Bugs
+
+
+* Microsoft Edge:
+  * Advanced button lost the darker gray color and looks the same as background
+  * `<option value="Prague">The Czech Republic</option>` does not show Prague, but only The Czech Republic.
+
+* Mozilla:
+  * Advanced button lost the darker gray color and looks the same as background
+  * `<option value="Prague">The Czech Republic</option>` does not show The Czech Republic, but only Prague. 
+
 
 ## Automated Testing
 The automate testing was executed by the following tools:
