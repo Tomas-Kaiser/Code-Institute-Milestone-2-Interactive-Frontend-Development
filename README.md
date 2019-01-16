@@ -65,12 +65,12 @@ The manual testing was accomplished mainly by using following technologies/tools
 
 * Microsoft Edge:
   * Advanced button lost the darker gray color and looks the same as background
-    * fixing: add background color #dddddd
+    * fixing: added background color #dddddd
   * `<option value="Prague">The Czech Republic</option>` does not show Prague, but only The Czech Republic.
 
 * Mozilla:
   * Advanced button lost the darker gray color and looks the same as background
-    * fixing: add background color #dddddd
+    * fixing: added background color #dddddd
   * `<option value="Prague">The Czech Republic</option>` does not show The Czech Republic, but only Prague. 
 
 

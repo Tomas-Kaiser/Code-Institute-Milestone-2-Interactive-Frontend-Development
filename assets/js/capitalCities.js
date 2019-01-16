@@ -52,15 +52,7 @@ let capitalCities = [
 function sortCities(capitals) {
    capitals.sort();
 
-   for (let capital of capitals) {
-      $("#capitalCities").append(`<option value="${capital[0]}">${capital[1]}</option>`);
-   }
-
-/* ES5 for loop
-   for (i = 0; i < capital.length; i++) {
-      $("#capitalCities").append(`<option value="${capital[i][0]}">${capital[i][1]}</option>`);
-   }
-*/
+   capitals.map((capital) => $("#capitalCities").append(`<option value="${capital[0]}">${capital[1]}</option>`));
 } 
 
 // Rendering capital cities
