@@ -104,6 +104,10 @@ h1 {
   font-size: 1.2em;
   border: 0;
 }
+.map-container .radio-not-selected {
+  border: 3px solid red;
+  margin: auto;
+}
 .map-container #map {
   min-height: 50vh;
 }

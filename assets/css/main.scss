@@ -127,6 +127,11 @@ h1 {
       border: 0;
    }
 
+   .radio-not-selected {
+      border: 3px solid red;
+      margin: auto;
+   }
+
    #map {
       min-height: 50vh;
 

@@ -8,12 +8,19 @@ let querySelected = null;
 radio.change(() => {
    let filteredRadio = radio.filter(":checked");
    querySelected = filteredRadio.val();
+   $("#radios").removeClass("radio-not-selected");
 });
 
 $("#submitCity").on("click", (e) => {
    let cityName = "";
    let limitQuery = 20;
    let radiusSelected = 550;
+
+      // If the radios not selected by user, inform them
+      if (querySelected === null) {
+         $("#radios").attr("class", "radio-not-selected");
+         console.log("not selected --- Radio")
+      }
 
    // Selected by ID name of city, how many venues you want to recommend, radius from the center
    cityName = $("#inputCity").val();
@@ -49,7 +56,7 @@ function getVenues(cityName = null, limitQuery = 20, radiusSelected = 550, query
    $.ajax({
       type: "GET",
       url: `${endPoint}client_id=${client_id}&client_secret=${client_secret}&v=${v}&limit=${limit}&near=${near}&radius=${radius}&query=${query}`,
-      success: function(data) {
+      success: function (data) {
          let dataAPI = [];
 
          dataAPI = data.response.groups[0].items;
@@ -78,7 +85,7 @@ function getMap(dataAPI, cityName = null, querySelected) {
 
    if (querySelected != null) {
 
-   // Marker color
+      // Marker color
       var greenIcon = new L.Icon({
          iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
          shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -86,11 +93,11 @@ function getMap(dataAPI, cityName = null, querySelected) {
          iconAnchor: [12, 41],
          popupAnchor: [1, -34],
          shadowSize: [41, 41]
-       });
-       
-   // Getting marker and pop up markers    
+      });
+
+      // Getting marker and pop up markers    
       dataAPI.map(myVenue => {
-         var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng], {icon: greenIcon}).addTo(mymap);
+         var marker = L.marker([myVenue.venue.location.lat, myVenue.venue.location.lng], { icon: greenIcon }).addTo(mymap);
          marker.bindPopup(`
          <h4>${myVenue.venue.name}</h4>
          <p class="marker-p">Address of venue:</p>
