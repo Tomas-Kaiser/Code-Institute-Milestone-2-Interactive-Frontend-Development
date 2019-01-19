@@ -102,6 +102,7 @@ Live version of the website can be found [here](https://tomas-kaiser.github.io/C
 ## Credits
 * Background image was collected from [google images](www.google.com)
 * Smooth scrolldown effect JS [w3schools](https://www.w3schools.com/howto/howto_css_smooth_scroll.asp#section1)
+* Magnifying glass icon [flaticon](www.flaticon.com)
 
 ## Contributing
 This repository is a part of project for Code Institute of a Full Stack Software Development course. Therefore, I will most likely not accept pull requests.
