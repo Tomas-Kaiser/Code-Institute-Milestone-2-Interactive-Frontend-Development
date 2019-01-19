@@ -22,7 +22,6 @@ $(document).ready(function () {
       // If the radios not selected by user, inform them
       if (querySelected === null) {
          $("#radios").attr("class", "radio-not-selected");
-         console.log("not selected --- Radio")
       }
 
       // Selected by ID name of city, how many venues you want to recommend, radius from the center
