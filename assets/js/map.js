@@ -82,7 +82,7 @@ $(document).ready(function () {
          attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
          maxZoom: 18,
          id: 'mapbox.streets',
-         accessToken: 'pk.eyJ1IjoidG9tYXMta2Fpc2VyIiwiYSI6ImNqaWsxcXBlZjFzYXUzcG43d3Z3dzBnengifQ.mQDUjX4MQ49QWM-Yz4u19g'
+         accessToken: 'pk.eyJ1IjoidG9tYXMta2Fpc2VyIiwiYSI6ImNrM3hrMjh6dzBjdnAzcnM4dDc3em52M3kifQ.DYyTeQdTHi3e0A43TjFBXw'
       }).addTo(mymap);
 
       if (querySelected != null) {
